@@ -40,6 +40,7 @@ public class TickTockTests extends AbstractStreamTests {
 		StreamDefinition stream = StreamDefinition.builder("TICKTOCK")
 				.definition("time | log")
 				.addProperty("app.log.log.expression", "'TICKTOCK - TIMESTAMP: '.concat(payload)")
+				//.addProperty("app.*.spring.autoconfigure.exclude", "org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration")
 				.build();
 
 		deployStream(stream);
